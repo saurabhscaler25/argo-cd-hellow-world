@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-service
+  namespace: default  # Or replace "default" with "hello-world" if using a custom namespace
+spec:
+  selector:
+    app: hello-world
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
